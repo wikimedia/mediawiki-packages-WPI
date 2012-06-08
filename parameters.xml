@@ -52,6 +52,7 @@
 			match="PlaceholderForDbServer" />
 
 	</parameter>
+
 	<parameter name="Automatic Dbserver" defaultValue ="$wgDBserver = '{DbServer}';" tags="MySQL,Hidden">
 		<parameterEntry type="TextFile" scope="\\LocalSettings.php" match="\$wgDBserver\s*=\s*'([^']*)';"/>
 	</parameter>
@@ -80,6 +81,7 @@
 			match="PlaceholderForDbName" />
 
 	</parameter>
+
 	<parameter name="Automatic Dbname" defaultValue ="$wgDBname  = '{DbName}';" tags="MySQL,Hidden" >
 		<parameterEntry type="TextFile" scope="\\LocalSettings.php" match="\$wgDBname\s*=\s*'([^']*)';"/>
 	</parameter>
@@ -96,23 +98,20 @@
 		friendlyName="MySQL table prefix"
 		description="Please provide a table prefix if you are using several web platforms in one database." >
 
-		<parameterValidation
-			type="RegularExpression"
-			validationString="^\w{1,16}$" />
+    <parameterValidation kind="AllowEmpty" />
 
 		<parameterEntry
 			type="TextFile"
 			scope="WpiSettings.php"
 			match="PlaceholderForDbPrefix" />
-			
 
-		
 		<description culture="en">Please provide a table prefix if you are using several web platforms in one database.</description>
 		<description culture="de">Bitte geben Sie ein Tabellenpräfix an, wenn Sie mehrere Webplattformen in einer Datenbank nutzen wollen.</description>
 		<friendlyName culture="en">MySQL table prefix</friendlyName>
 		<friendlyName culture="de">MySQL Tabellenpräfix</friendlyName>
 
 	</parameter>
+
 	<parameter name="Automatic Dbprefix" defaultValue ="$wgDBprefix  = '{DbPrefix}';" tags="MySQL,Hidden" >
 		<parameterEntry type="TextFile" scope="\\LocalSettings.php" match="\$wgDBprefix\s*=\s*'([^']*)';"/>
 	</parameter>
@@ -142,9 +141,11 @@
 			match="PlaceholderForDbUsername" />
 
 	</parameter>
+
 	<parameter name="Automatic DbUsername" defaultValue ="$wgDBuser  = '{DbUsername}';" tags="MySQL,Hidden" >
 		<parameterEntry type="TextFile" scope="\\LocalSettings.php" match="\$wgDBuser\s*=\s*'([^']*)';"/>
 	</parameter>
+
 	<!-- This parameter prompts the user for the database user's password.
 	-->
 
@@ -319,8 +320,28 @@
 			match="PlaceholderForAdminpass" />
 
 	</parameter>
-	
-	<!-- Azure specific parameters -->
+  
+  <!-- option to enable file upload on mediawiki -->
+  <parameter 
+		name="enablefileupload" 
+		defaultValue="False" 
+		friendlyName="Enable MediaWiki file upload" 
+		tags="MediaWiki,NoStore" 
+		description="Check this if you want to enable MediaWiki file upload.">
+
+		<description culture="en">Check this if you want to enable MediaWiki file upload.</description>
+		<description culture="de">Haken setzen, wenn Sie den Dateiupload in MediaWiki aktivieren wollen.</description>
+		<friendlyName culture="en">Enable MediaWiki file upload</friendlyName>
+		<friendlyName culture="de">MediaWiki Dateiupload aktivieren</friendlyName>
+
+    <parameterValidation type="Boolean" />
+    <parameterEntry
+			type="TextFile"
+			scope="WpiSettings.php"
+			match="PlaceholderForFileUpload" />
+  </parameter>
+  
+  <!-- Azure specific parameters -->
 	<parameter
 		tags="Azure,NoStore"
 		name="usewindowsazure"
@@ -331,7 +352,7 @@
 		<description culture="en">Check this if you want to use Windows Azure as file backend.</description>
 		<description culture="de">Haken setzen, wenn Sie Windows Azure als Speicherort für Dateien vewenden wollen.</description>
 		<friendlyName culture="en">Use Windows Azure as file backend</friendlyName>
-		<friendlyName culture="de">Windows Azure als Speicherort für Dateien vewenden</friendlyName>
+		<friendlyName culture="de">Windows Azure als Dateispeicherort vewenden</friendlyName>
 
 		<!-- Renders as checkbox -->
 		<parameterValidation
@@ -350,10 +371,10 @@
 		name="azureHost"
 		defaultValue="http://127.0.0.1:10000"
 		friendlyName="Windows Azure Host"
-		description="Please provide the url to your Windows Azure server. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified." >
+		description="Please provide the url to your Windows Azure server. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified." >
 		
-		<description culture="en">Please provide the url to your Windows Azure server. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified.</description>
-		<description culture="de">Bitte geben Sie die URL zur Ihrem Windows Azure Server an. Wenn Sie Windows Azure nicht als FileBackend für Ihre MediaWiki-Installation nurzen wollen können Sie den Wert unverändert lassen.</description>
+		<description culture="en">Please provide the url to your Windows Azure server. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified.</description>
+		<description culture="de">Bitte geben Sie die URL zur Ihrem Windows Azure Server an. Wenn Sie Windows Azure nicht als Dateispeicherort für Ihre MediaWiki-Installation nutzen wollen können Sie den Wert unverändert lassen.</description>
 		<friendlyName culture="en">Windows Azure Host</friendlyName>
 		<friendlyName culture="de">Windows Azure Host</friendlyName>
 <!--
@@ -373,10 +394,10 @@
 		name="azureAccount"
 		defaultValue="devstoreaccount1"
 		friendlyName="Windows Azure Account"
-		description="Please provide your Windows Azure account. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified." >
+		description="Please provide your Windows Azure account. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified." >
 
-		<description culture="en">Please provide your Windows Azure account. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified.</description>
-		<description culture="de">Bitte geben Sie Ihr Windows Azure Konto an. Wenn Sie Windows Azure nicht als FileBackend für Ihre MediaWiki-Installation nurzen wollen können Sie den Wert unverändert lassen.</description>
+		<description culture="en">Please provide your Windows Azure account. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified.</description>
+		<description culture="de">Bitte geben Sie Ihr Windows Azure Konto an. Wenn Sie Windows Azure nicht als Dateispeicherort für Ihre MediaWiki-Installation nutzen wollen können Sie den Wert unverändert lassen.</description>
 		<friendlyName culture="en">Windows Azure Account</friendlyName>
 		<friendlyName culture="de">Windows Azure Konto</friendlyName>
 
@@ -392,10 +413,10 @@
 		name="azureKey"
 		defaultValue="Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw=="
 		friendlyName="Windows Azure Key"
-		description="Please provide your Windows Azure Key. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified." >
+		description="Please provide your Windows Azure Key. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified." >
 
-		<description culture="en">Please provide your Windows Azure Key. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave thes field unmodified.</description>
-		<description culture="de">Bitte geben Sie Ihren Windows Azure Schlüssel an. Wenn Sie Windows Azure nicht als FileBackend für Ihre MediaWiki-Installation nurzen wollen können Sie den Wert unverändert lassen.</description>
+		<description culture="en">Please provide your Windows Azure Key. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified.</description>
+		<description culture="de">Bitte geben Sie Ihren Windows Azure Schlüssel an. Wenn Sie Windows Azure nicht als Dateispeicherort für Ihre MediaWiki-Installation nutzen wollen können Sie den Wert unverändert lassen.</description>
 		<friendlyName culture="en">Windows Azure Key</friendlyName>
 		<friendlyName culture="de">Windows Azure Schlüssel</friendlyName>
 

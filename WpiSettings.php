@@ -17,7 +17,7 @@ $wgWPIOptionStore = array(
 		'pass' => 'PlaceholderForAdminpass',
 		
 		'scriptpath' => 'PlaceholderForScriptPath',
-	
+	    'enablefileupload' => 'PlaceholderForFileUpload',
 		'usewindowsazure' => 'PlaceholderForUseAzure',
 		'azurehost' => 'PlaceholderForAzureHost',
 		'azureaccount' => 'PlaceholderForAzureAccount',

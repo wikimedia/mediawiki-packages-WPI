@@ -21,11 +21,12 @@ wfInstallerMain();
 
 function wfInstallerMain() {
 //	global $wgRequest, $wgLang, $wgMetaNamespace, $wgCanonicalNamespaceNames;
-	global $IP, $wgWPIOptionStore, $wgLanguageCode;
+	global $IP, $wgWPIOptionStore, $wgLanguageCode, $wgEnableUploads;
 
 	$siteName = $wgWPIOptionStore['sitename'];
 	$adminName = $wgWPIOptionStore['adminname'];
 	$wgLanguageCode = $wgWPIOptionStore['lang'];
+	$wgEnableUploads = (strtolower($wgWPIOptionStore['enablefileupload']) == 'true');
 	
 	$wgWPIOptionStore['scriptpath'] = getScriptPath();
 	
@@ -35,7 +36,7 @@ function wfInstallerMain() {
 	$installer = new CliInstaller( $siteName, $adminName, $wgWPIOptionStore );
 	
 	$extensions = array();
-	if ( $wgWPIOptionStore['usewindowsazure'] == "True" ) {
+	if ( strtolower($wgWPIOptionStore['usewindowsazure']) == "true" ) {
 		$extensions[] = 'WindowsAzureStorage';
 		$extensions[] = 'WindowsAzureSDK';
 	}
@@ -48,7 +49,7 @@ function wfInstallerMain() {
 		$installer->execute();
 		$installer->writeConfigurationFile( $IP );
 		// Modify LocalSettings for WindowsAzure
-		if ( $wgWPIOptionStore['usewindowsazure'] === "True" ) {
+		if ( strtolower($wgWPIOptionStore['usewindowsazure']) == "true" ) {
 			$azureSettings = "
 \$wgFileBackends[] = array(
 		'name'        => 'azure-backend',
@@ -113,8 +114,7 @@ function wfInstallerMain() {
 	
 	ob_end_clean();
 	
-	echo "<h1>Installation successful.</h1>";
-	echo "<a href='../index.php'>Continue to MediaWiki...</a>";
+	header('Location: ../');
 }
 
 /**
