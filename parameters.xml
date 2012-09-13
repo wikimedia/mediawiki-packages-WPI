@@ -345,7 +345,10 @@
     <friendlyName culture="en">Enable MediaWiki file upload</friendlyName>
     <friendlyName culture="de">MediaWiki Dateiupload aktivieren</friendlyName>
     
-    <parameterValidation type="Boolean" />
+    <parameterValidation
+			type="Enumeration"
+      validationString="True,False" />
+    
     <parameterEntry
 			type="TextFile"
 			scope="WpiSettings.php"
@@ -433,5 +436,29 @@
 			match="PlaceholderForAzureKey" />
 
 	</parameter>
+
+  <parameter
+		tags="NoStore"
+		name="wikiId"
+		defaultValue="mywiki"
+		friendlyName="Wiki ID (Prefix to container names that is unique to this wiki)"
+		description="Prefix to container names that is unique to this wiki. Container names must start with a letter or number, and can contain only letters, numbers, and the dash (-) character. Every dash (-) character must be immediately preceded and followed by a letter or number, consecutive dashes are not permitted in container names. All letters in a container name must be lowercase. Container names must be from 3 through 63 characters long. This prefix must be from 3 through 30 characters long." >
+
+    <description culture="en">Prefix to container names that is unique to this wiki. Container names must start with a letter or number, and can contain only letters, numbers, and the dash (-) character. Every dash (-) character must be immediately preceded and followed by a letter or number, consecutive dashes are not permitted in container names. All letters in a container name must be lowercase. Container names must be from 3 through 63 characters long. This prefix must be from 3 through 30 characters long.</description>
+    <description culture="de">Präfix für Container-Namen, die einzigartig in diesem Wiki ist. Container müssen mit einem Buchstaben oder einer Zahl beginnen und dürfen nur Buchstaben, Ziffern und den Bindestrich (-) enthalten Charakter. Jeder Strich (-) Zeichen unmittelbar vorausgehen muss und durch einen Buchstaben oder eine Zahl gefolgt, werden aufeinanderfolgende Striche nicht in Container-Namen erlaubt. Alle Buchstaben in einem Container-Name muss in Kleinbuchstaben geschrieben sein. Container-Namen müssen aus 3 bis 63 Zeichen lang sein. Dieses Präfix muss zwischen 3 und 30 Zeichen lang sein.</description>
+    <friendlyName culture="en">Wiki ID (Prefix to container names that is unique to this wiki)</friendlyName>
+    <friendlyName culture="de">Wiki-ID (Präfix Container-Namen, die eindeutig zu diesem Wiki ist)</friendlyName>
+    
+    <!-- limiting the container prefix length to 30 -->
+    <parameterValidation
+			type="RegularExpression"
+			validationString="(^([a-z]|\d))((-([a-z]|\d)|([a-z]|\d)){2,30})$" />
+    
+    <parameterEntry
+			type="TextFile"
+			scope="WpiSettings.php"
+			match="PlaceholderForWikiId" />
+
+  </parameter>
 
 </parameters>

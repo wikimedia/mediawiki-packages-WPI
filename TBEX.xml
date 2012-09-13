@@ -31,6 +31,12 @@
       <Uri>http://www.mediawiki.org/wiki/Developer_hub</Uri>
       <ImageUri>http://upload.wikimedia.org/wikipedia/commons/0/0b/Crystal_Clear_app_tutorials.png</ImageUri>
     </AddLink>
+    <AddLink InDashboard="True">
+      <Title>Windows Azure Storage</Title>
+      <Description>This is a documentation about how to store files in the Windows Azure cloud, using the Windows Azure Storage Service.</Description>
+      <Uri>http://www.mediawiki.org/wiki/WPI/WindowsAzureStorage</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/0/0b/Crystal_Clear_app_tutorials.png</ImageUri>
+    </AddLink>
    </Links>
   <Ribbon>
     <AddRibbonButton>

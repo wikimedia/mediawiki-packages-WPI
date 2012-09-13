@@ -21,5 +21,6 @@ $wgWPIOptionStore = array(
 		'usewindowsazure' => 'PlaceholderForUseAzure',
 		'azurehost' => 'PlaceholderForAzureHost',
 		'azureaccount' => 'PlaceholderForAzureAccount',
-		'azurekey' => 'PlaceholderForAzureKey'
+		'azurekey' => 'PlaceholderForAzureKey',
+        'wikiId' => 'PlaceholderForWikiId'
 	);
