@@ -248,7 +248,7 @@
 	</parameter>
 	
 	<parameter
-		tags="MediaWiki,NoStore"
+		tags="NoStore"
 		name="Name of wiki"
 		defaultValue="MyWiki"
 		friendlyName="Name of wiki"
@@ -262,7 +262,7 @@
 		<!-- Sitename must not be "MediaWiki" -->
 		<parameterValidation
 			type="RegularExpression"
-			validationString="(?=^[^\\'$]*$)(?!^\s*[M|m]edia[W|w]iki\s*$)" />
+			validationString="^((?!^\s*[M|m]edia[W|w]iki\s*$)[^\\'$])*$" />
 
 		<parameterEntry
 			type="TextFile"
@@ -272,7 +272,7 @@
 	</parameter>
 	
 	<parameter
-		tags="MediaWiki,NoStore"
+		tags="NoStore"
 		name="language"
 		defaultValue="en"
 		friendlyName="MediaWiki site language"
@@ -294,7 +294,7 @@
 	</parameter>
 	
 	<parameter
-		tags="MediaWiki,NoStore"
+		tags="NoStore"
 		name="MediaWiki administrator name"
 		defaultValue="WikiSysop"
 		friendlyName="Name for MediaWiki administrator"
@@ -318,7 +318,7 @@
 	</parameter>
 	
 	<parameter
-		tags="MediaWiki,NoStore,Password,New"
+		tags="NoStore,Password,New"
 		name="MediaWiki administrator password"
 		defaultValue=""
 		friendlyName="Password for MediaWiki administrator"
@@ -346,7 +346,7 @@
     name="Enable MediaWiki file upload" 
     defaultValue="No" 
     friendlyName="Enable MediaWiki file upload" 
-    tags="MediaWiki,NoStore" 
+    tags="NoStore" 
     description="Select this if you want to enable MediaWiki file upload.">
 
     <description culture="en">Select this if you want to enable MediaWiki file upload.</description>
@@ -393,7 +393,7 @@
 	<parameter
 	tags="Azure,NoStore"
 		name="Windows Azure storage account name"
-		defaultValue="AzureStorageAccountName"
+		defaultValue="accountname"
 		friendlyName="Windows Azure storage account name"
 		description="Please provide your Windows Azure storage account name. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified." >
 
@@ -417,7 +417,7 @@
 	<parameter
 		tags="Azure,NoStore"
 		name="Windows azure storage account key"
-		defaultValue="AzureStorageAccountKey"
+		defaultValue="accountkey"
 		friendlyName="Windows azure storage account key"
 		description="Please provide your Windows azure storage account key. If you do not want to use Windows Azure as FileBackend for your MediaWiki you can leave this field unmodified." >
 
