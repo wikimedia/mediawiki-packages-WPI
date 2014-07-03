@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebPlatform>
+  <Links>
+    <AddLink InDashboard="True">
+      <Title>Start Here</Title>
+      <Description>Complete MediaWiki Installation.</Description>
+      <Uri>/index.php</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/MediaWiki-extensions-icon.svg/52px-MediaWiki-extensions-icon.svg.png</ImageUri>
+    </AddLink>
+    <AddLink InDashboard="True" InLearn="True">
+      <Title>About MediaWiki</Title>
+      <Description>MediaWiki is a free software open source wiki package written in PHP, originally for use on Wikipedia. It is now used by several other projects of the non-profit Wikimedia Foundation and by many other wikis, including this website.</Description>
+      <Uri>http://www.mediawiki.org/wiki/MediaWiki</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Mediawiki-logo.png/80px-Mediawiki-logo.png</ImageUri>
+    </AddLink>    
+    <AddLink InDashboard="True" InLearn="True">
+      <Title>System admin hub - Everything for the system administrator.</Title>
+      <Description>This is a place for system administrators to get help installing, upgrading, configuring or maintaining the MediaWiki software on a third-party wiki..</Description>
+      <Uri>http://www.mediawiki.org/wiki/Sysadmin_hub</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/MediaWiki-sysadmins-icon.svg/175px-MediaWiki-sysadmins-icon.svg.png</ImageUri>
+    </AddLink>
+    <AddLink InDashboard="True">
+      <Title>Community</Title>
+      <Description>Find: Forums, Documentation, FAQ's and Help</Description>
+      <Uri>http://www.mediawiki.org/wiki/Project:Help</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Mediawiki-logo.png/80px-Mediawiki-logo.png</ImageUri>
+    </AddLink>
+    <AddLink InDashboard="True">
+      <Title>Developmer hub</Title>
+      <Description>This is an overview of MediaWiki development, including links to the key documents, resources and tools available to developers.</Description>
+      <Uri>http://www.mediawiki.org/wiki/Developer_hub</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/0/0b/Crystal_Clear_app_tutorials.png</ImageUri>
+    </AddLink>
+    <AddLink InDashboard="True">
+      <Title>Windows Azure Storage</Title>
+      <Description>This is a documentation about how to store files in the Windows Azure cloud, using the Windows Azure Storage Service.</Description>
+      <Uri>http://www.mediawiki.org/wiki/WPI/WindowsAzureStorage</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/0/0b/Crystal_Clear_app_tutorials.png</ImageUri>
+    </AddLink>
+   </Links>
+  <Ribbon>
+    <AddRibbonButton>
+      <Label>Site Admin</Label>
+      <Uri>/index.php?title=Special%3ASpecialPages</Uri>
+      <ImageUri>http://upload.wikimedia.org/wikipedia/commons/thumb/2/23/MediaWiki-extensions-icon.svg/52px-MediaWiki-extensions-icon.svg.png</ImageUri>
+    </AddRibbonButton>
+  </Ribbon>
+
+  <PathProtection>
+    <AllowPath AllowNested="False">
+      <RelativePath>web.config</RelativePath>
+    </AllowPath>
+    <ProtectPath>
+      <RelativePath>bin</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>docs</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>extensions</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>images</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>includes</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>languages</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>maintenance</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>mw-config</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>mw-wpi</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>resources</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>serialized</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>tests</RelativePath>
+    </ProtectPath>
+    <ProtectPath>
+      <RelativePath>*.php</RelativePath>
+    </ProtectPath>
+    
+  </PathProtection>
+
+</WebPlatform>
